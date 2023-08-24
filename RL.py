@@ -221,7 +221,7 @@ finishScore = 40
 alpha = 0.3 # alpha -> 0: No updated Q, alpha -> 1: Fully updated Q
 gamma = 0.7 # gamma -> 0: Greedy, short-term focused, gamma -> 1: Long-term focused 
 epsilon_original = 0.5 # epsilon -> 0: More exploration, epsilon -> 1: Take known route
-epsilon = epsiolon_original
+epsilon = epsilon_original
 
 # State- and action spaces
 # List of lists of all possible states and action: [x-coordinates,y-coordinates,Velocities,Directions]
