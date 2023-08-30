@@ -236,7 +236,7 @@ epsilon = [0] # epsilon -> 0: More exploration, epsilon -> 1: Take known route
 # Learning loop
 diffArr = []
 pointsArr = []
-learningLoops = 1000
+learningLoops = 100000
 changingStages = [int(learningLoops/4),int(learningLoops/2),int(learningLoops*3/4),int(learningLoops*9/10)]
 timesFinished = [0,0,0,0,0]
 loops2Draw = [1,changingStages[0],changingStages[1],changingStages[2],learningLoops]
@@ -261,7 +261,7 @@ for loopNumber in range(1,learningLoops+1):
     finished = False
     crashed = False    
     # One drive loop
-    while not finished and not crashed and totalPoints > -100:
+    while not finished and not crashed and totalPoints > crashedScore:
         # Make decision on how to drive and add to history
         Action = performAction(States_history[-1],Q,epsilon[-1])
         Actions_history.append(Action)
@@ -342,8 +342,8 @@ str(timesFinished) + '\nFinishing percentage: ' + str(finishPercentage) +
 
 plt.figure()
 plt.plot(list(range(1,learningLoops+1,scaling)),pointsAverage)
-plt.title('Finishing score averaged for 1000 runs during learning')
-plt.xlabel('Loop number')
+plt.title('Finishing score averaged for ' + str(scaling) + ' runs during learning')
+plt.xlabel('Learning run #')
 plt.ylabel('Points scored')
 
 # Display plot
