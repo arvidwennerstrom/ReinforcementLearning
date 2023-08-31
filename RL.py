@@ -252,7 +252,7 @@ for loopNumber in range(1,learningLoops+1):
     elif loopNumber == changingStages[2]:
         epsilon.append(0.9)
     elif loopNumber == changingStages[3]:
-        epsilon.append(1)
+        epsilon.append(0.99)
    
     # Create framework for lists of history
     States_history = [np.array(start_position + start_velocity,dtype = int)] # List of state parameters [x-coordinate, y-coordinate, Speed, Angle (Deg)]
